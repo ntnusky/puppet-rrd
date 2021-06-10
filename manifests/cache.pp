@@ -2,7 +2,8 @@
 class rrd::cache (
   $ensure           = 'installed',
   $service          = 'running',
-  $listen           = $rrd::params::cache_listen,
+  $sock_file        = $rrd::paramc::cache_sock_file,
+  $listen           = "unix:${sock_file},
   $gid              = undef,
   $journal_dir      = $rrd::params::cache_journal_dir,
   $timeout          = $rrd::params::cache_timeout,

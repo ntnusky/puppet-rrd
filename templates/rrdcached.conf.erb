@@ -14,6 +14,15 @@ DISABLE=<%= @service_enable ? '0' : '1' %>
 # default: see /etc/init.d/rrdcached
 OPTS="-t <%= @write_threads %> -w <%= @timeout %> -z <%= @delay %> -j <%= @journal_dir %> <%- if @gid -%> -s <%= @gid %><% end %> -l <%= @listen %><%= @always_flush ? ' -F' : '' %> -b <%= @jump_dir %><%= @restrict_writes ? ' -B' : '' %>"
 
+WRITE_THREADS="<%= @write_threads %>"
+WRITE_TIMEOUT="<%= @timeout %>"
+WRITE_JITTER="<%= @delay %>"
+JOURNAL_PATH="<%= @journal_dir %>
+<%- if @gid -%>SOCKGROUP="<%= @gid %>"<% end %>
+SOCKFILE="<%= @sock_file %>"
+BASE_OPTIONS="<%= @always_flush ? ' -F' : '' %> <%= @restrict_writes ? ' -B' : '' %>"
+BASE_PATH="<%= @jump_dir %>"
+
 # number of seconds to wait for rrdcached to shut down
 # (writing the data to disk may take some time;
 # tune this according to your setup)

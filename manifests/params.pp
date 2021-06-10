@@ -1,7 +1,7 @@
 # Defaults and variables
 class rrd::params {
 
-  $cache_listen           = 'unix:/var/run/rrdcached.sock'
+  $cache_sock_file        = '/var/run/rrdcached.sock'
   $cache_journal_dir      = '/var/lib/rrdcached/journal/'
   $cache_timeout          = '1800'
   $cache_delay            = '1800'
