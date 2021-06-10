@@ -4,6 +4,7 @@ class rrd::cache (
   $service          = 'running',
   $sock_file        = $rrd::params::cache_sock_file,
   $listen           = "unix:${sock_file}",
+  $uid              = undef,
   $gid              = undef,
   $journal_dir      = $rrd::params::cache_journal_dir,
   $timeout          = $rrd::params::cache_timeout,
