@@ -17,7 +17,7 @@ OPTS="-t <%= @write_threads %> -w <%= @timeout %> -z <%= @delay %> -j <%= @journ
 WRITE_THREADS="<%= @write_threads %>"
 WRITE_TIMEOUT="<%= @timeout %>"
 WRITE_JITTER="<%= @delay %>"
-JOURNAL_PATH="<%= @journal_dir %>
+JOURNAL_PATH="<%= @journal_dir %>"
 <%- if @gid -%>SOCKGROUP="<%= @gid %>"<% end %>
 SOCKFILE="<%= @sock_file %>"
 BASE_OPTIONS="<%= @always_flush ? ' -F' : '' %> <%= @restrict_writes ? ' -B' : '' %>"
