@@ -6,6 +6,7 @@ class rrd::cache (
   $listen           = "unix:${sock_file}",
   $uid              = undef,
   $gid              = undef,
+  $socket_mode      = undef,
   $journal_dir      = $rrd::params::cache_journal_dir,
   $timeout          = $rrd::params::cache_timeout,
   $delay            = $rrd::params::cache_delay,
